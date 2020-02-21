@@ -21,6 +21,10 @@ echo "Installing Homebrew"
 echo "Installing iTerm 2"
 brew cask install iterm2
 
+# LastPass
+echo "Installing LastPass"
+brew cask install lastpass
+
 # Mobster
 echo "Installing Mobster"
 brew cask install mobster
