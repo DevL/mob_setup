@@ -72,9 +72,9 @@ chsh -s /bin/zsh
 mkdir ~/.zsh
 mkdir ~/.zsh/completions
 cp /usr/local/share/zsh/site-functions/git-completion.bash ~/.zsh/completions/_hub
-echo "fpath=(~/.zsh/completions $fpath)" > ~/.zshrc
-echo "autoload -Uz compinit && compinit" > ~/.zshrc
-echo "autoload bashcompinit && bashcompinit" > ~/.zshrc
+echo "fpath=(~/.zsh/completions $fpath)" >> ~/.zshrc
+echo "autoload -Uz compinit && compinit" >> ~/.zshrc
+echo "autoload bashcompinit && bashcompinit" >> ~/.zshrc
 echo "For further zsh configuration, see https://scriptingosx.com/2019/06/moving-to-zsh/"
 open "https://scriptingosx.com/2019/06/moving-to-zsh/"
 
