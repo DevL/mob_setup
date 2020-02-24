@@ -51,12 +51,12 @@ brew cask install sublime-text
 
 # Vim
 echo "Enable syntax coloring in vim"
-echo "syntax on" > ~/.vimrc
+echo "syntax on" >> ~/.vimrc
 
 # Install and configure git and hub
 brew install git hub
 touch ~/.gitignore
-git config --global core.excludesfile `~/.gitignore`
+# git config --global core.excludesfile `~/.gitignore`
 git config --global push.default current
 git config --global pull.rebase true
 git config --global fetch.prune true
@@ -66,15 +66,11 @@ git config --global alias.st status
 git config --global alias.unstage "reset HEAD --"
 git config --global alias.ds "diff --staged"
 
-# Set zsh to be the default shell and enable git tab completions
-echo "Enable zsh and git tab completions"
-chsh -s /bin/zsh
-mkdir ~/.zsh
-mkdir ~/.zsh/completions
-cp /usr/local/share/zsh/site-functions/git-completion.bash ~/.zsh/completions/_hub
-echo "fpath=(~/.zsh/completions $fpath)" >> ~/.zshrc
-echo "autoload -Uz compinit && compinit" >> ~/.zshrc
-echo "autoload bashcompinit && bashcompinit" >> ~/.zshrc
-echo "For further zsh configuration, see https://scriptingosx.com/2019/06/moving-to-zsh/"
-open "https://scriptingosx.com/2019/06/moving-to-zsh/"
+# Install Oh My Zsh
+echo "Installing Oh My Zsh"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# Set aliases
+echo "Add zsh aliases"
+echo "alias ll='ls -laF'" >> ~/.zshrc
+echo "alias reloadprofile='source ~/.zshrc'" >> ~/.zshrc
